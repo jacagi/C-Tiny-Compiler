@@ -7,15 +7,20 @@ static char *ASTop[] = { "+", "-", "*", "/" };
 int interpretAST(struct ASTnode *n) {
   int leftval, rightval;
 
-  if (n->left)
+  if (n->left){
     leftval = interpretAST(n->left);
-  if (n->right)
+  }
+  
+  if (n->right){
     rightval = interpretAST(n->right);
+  }
 
-  if (n->op == A_INTLIT)
+  if (n->op == A_INTLIT){
     printf("int %d\n", n->intvalue);
-  else
+  }else{
     printf("%d %s %d\n", leftval, ASTop[n->op], rightval);
+  }
+    
 
   switch (n->op) {
     case A_ADD:

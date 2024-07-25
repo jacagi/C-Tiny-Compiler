@@ -18,8 +18,9 @@ static int next(void) {
   }
 
   c = fgetc(Infile);
-  if ('\n' == c)
-    Line++;	
+  if ('\n' == c){
+    Line++;
+  }
   return c;
 }
 

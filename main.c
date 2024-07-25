@@ -22,8 +22,9 @@ static void scanfile() {
 
   while (scan(&T)) {
     printf("Token %s", tokstr[T.token]);
-    if (T.token == T_INTLIT)
+    if (T.token == T_INTLIT){
       printf(", value %d", T.intvalue);
+    }
     printf("\n");
   }
 }
@@ -31,8 +32,9 @@ static void scanfile() {
 void main(int argc, char *argv[]) {
   struct ASTnode *n;
 
-  if (argc != 2)
+  if (argc != 2){
     usage(argv[0]);
+  }
 
   init();
 

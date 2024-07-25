@@ -37,8 +37,9 @@ struct ASTnode *binexpr(void) {
 
   left = primary();
 
-  if (Token.token == T_EOF)
+  if (Token.token == T_EOF){
     return (left);
+  }
 
   nodetype = arithop(Token.token);
 
